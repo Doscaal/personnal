@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    doscaal_profile module for OpenERP, Manage line per product
-#    Copyright (C) 2016 SYLEAM Info Services (<http://www.Syleam.fr/>)
+#    Copyright (C) 2017 SYLEAM Info Services (<http://www.Syleam.fr/>)
 #              Alexandre Moreau <alexandre.moreau@syleam.fr>
 #
 #    This file is a part of doscaal_profile
@@ -22,31 +22,13 @@
 #
 ##############################################################################
 
-{
-    'name': 'Doscaal Profile',
-    'version': '1.0',
-    'category': 'Custom',
-    'description': """Manage line per product""",
-    'author': 'SYLEAM',
-    'website': 'http://www.syleam.fr/',
-    'depends': [
-        'sale',
-        'mrp',
-        'purchase',
-    ],
-    'init_xml': [],
-    'images': [],
-    'update_xml': [
-        'views/product_template.xml',
-        'views/sale_order.xml',
-        # 'security/ir.model.access.csv',
-    ],
-    'demo_xml': [],
-    'test': [],
-    # 'external_dependancies': {'python': ['kombu'], 'bin': ['which']},
-    'installable': True,
-    'active': False,
-    'license': 'AGPL-3',
-}
+from odoo import models, fields
+
+
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    complexity = fields.Selection(selection=[(1, 'easy'), (2, 'normal'), (3, 'complex'), (4, 'hard')], string='Level', help='Help note')
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

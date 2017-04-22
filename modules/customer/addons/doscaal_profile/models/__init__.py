@@ -22,31 +22,9 @@
 #
 ##############################################################################
 
-{
-    'name': 'Doscaal Profile',
-    'version': '1.0',
-    'category': 'Custom',
-    'description': """Manage line per product""",
-    'author': 'SYLEAM',
-    'website': 'http://www.syleam.fr/',
-    'depends': [
-        'sale',
-        'mrp',
-        'purchase',
-    ],
-    'init_xml': [],
-    'images': [],
-    'update_xml': [
-        'views/product_template.xml',
-        'views/sale_order.xml',
-        # 'security/ir.model.access.csv',
-    ],
-    'demo_xml': [],
-    'test': [],
-    # 'external_dependancies': {'python': ['kombu'], 'bin': ['which']},
-    'installable': True,
-    'active': False,
-    'license': 'AGPL-3',
-}
+import sale_order
+import sale_order_line
+import product_template
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
