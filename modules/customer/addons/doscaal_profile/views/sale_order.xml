@@ -32,8 +32,26 @@
                 <xpath expr="//button[@name='print_quotation']" position="after">
                     <button name="generate_meal" string="Generate Meal" type="object" states="draft,sent" class="btn-primary"/>
                 </xpath>
+                <xpath expr="//tree/field[@name='sequence']" position="after">
+                    <field name="weekday"/>
+                </xpath>
+                <xpath expr="//field[@name='validity_date']" position="after">
+                    <field name="week_type"/>
+                </xpath>
                 <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
                     <field name="complexity"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='tax_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='price_subtotal']" position="attributes">
+                    <attribute name="invisible">1</attribute>
                 </xpath>
             </field>
         </record>

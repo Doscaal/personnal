@@ -29,6 +29,7 @@ class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     complexity = fields.Selection(selection=[(1, 'easy'), (2, 'normal'), (3, 'complex'), (4, 'hard')], string='Level', help='Help note')
+    weekday = fields.Char(string='Week day', size=64, help='Help note')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
