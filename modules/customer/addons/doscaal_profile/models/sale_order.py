@@ -75,6 +75,7 @@ class SaleOrder(models.Model):
                     'order_id': sale.id,
                     'sequence': sequence,
                     'customer_lead': sequence,
+                    'complexity': product.complexity,
                     'weekday': weekday[sequence],
                 }
                 line = self.env['sale.order.line'].create(values)
